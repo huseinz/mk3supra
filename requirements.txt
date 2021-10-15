@@ -1,0 +1,7 @@
+coverage
+flask
+flask-security
+flask-blogging
+bootstrap-flask
+requests
+waitress
