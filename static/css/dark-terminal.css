@@ -11,10 +11,11 @@
         --background-color: #222225;
         --page-width: 60em;
         --font-color: #e8e9ed;
-        --invert-font-color: #222225;
-        --secondary-color: #a3abba;
+        --invert-font-color: #00e6ff;
+        --secondary-color: #3d4658;
         --tertiary-color: #a3abba;
-        --primary-color: #62c4ff;
+        /*--primary-color: #62c4ff;*/
+        --primary-color: #00ff15;
         --error-color: #ff3c74;
         --progress-bar-background: #3f3f44;
         --progress-bar-fill: #62c4ff;

@@ -5,12 +5,31 @@
 {% block title %}🏎️  MK3 Supra 🏎️{% endblock %}
 
 {% block content %}
-{{super()}}
-p33p33
-{% endblock %}
+<div class='terminal-timeline'>
+	<div class='terminal-card'>
+		<header class='terminal-prompt'>Toyota A70 Supra Owners Homepage</header>
+		<div>
+			<p>I first decided to purchase a MK3 in January 2019. After a few months of extensive research online about the car, I decided to purchase a 1989 MA70 with a blown engine
+			from a bald Dominican guy that worked at a buy-here-pay-here car lot for $2000. A year later, I rebuilt the engine and got her back on the road. Still plenty of work left
+			to be done, but I am grateful to have succeeded so far.
+			This was made possible due to two decades of knowledge from forum posts and fan websites being available on the internet.</p>  
+			
+			<p>blah blah blah I suck at expository writing 
+			so I'll just get to the point</p>
 
-{% block navbar %}
-{{ super() }}
+			<p>This purpose of this site is to serve as a resource homepage for new and current owners. Or in other words, a fan site. Also it's my first attempt at making a 'real' public website.
+			I will mostly host curated links to references, writeups, parts vendors, my ECU map, photos and memes, etc.
+			</p>
+
+			<p>My ultimate goal for this site is for it to be a mix between a pure forum, a personal blog, and a technical wiki. Where anyone can contribute, but information is curated.
+			If you know web programming, you can contribute via pull request on the GitHub repository.</p>
+			
+			<p> I also want to attempt to bring back and preserve some of the lost MK3 lore from websites that have long since gone down and are only preserved by the Wayback machine. Some of these include
+			7mpower.com and mkiiitech.com. I'm hoping that Supramania and its nearly 2 million posts are able to be restored as well.</p>
+		        <img class='img-responsive' src='{{ url_for('static', filename='img/art/supra_sticker.png') }}'>	
+		</div>
+	</div>
+</div>
 {% endblock %}
 
 {% block scripts %}
