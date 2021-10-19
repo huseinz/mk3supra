@@ -1,8 +1,3 @@
-import werkzeug.serving
-from routes.main import app
-
-def run_server():
-    werkzeug.run_simple(application=app, hostname='127.0.0.1', port=1989, use_reloader=True)
-
-if __name__ == '__main__':
-    run_server()
+version https://git-lfs.github.com/spec/v1
+oid sha256:780fda20802afd7b020cd2256798bbedd4071c8bb7f45705badd9a5160dcfa87
+size 209
