@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dbde3d3221aade87792d5716c93514f62e55e49d81d645b52684a7293ebe9af8
-size 320
+[Unit]
+Description=mk3supra.net
+After=syslog.target network.target
+
+[Service]
+Type=simple
+User=user_mk3supra
+WorkingDirectory=/var/www/html/mk3supra.net
+ExecStart=/var/www/html/mk3supra.net/venv/bin/python3.10 serve.py
+ExecStop=/bin/echo “mk3supra stopped” | /usr/bin/mail -s "mk3supra stopped" zubir
+Restart=always
