@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:55793ed85ed2d500b08f4ab0e2bb9d909128d8a307dd08cddc69ff95f894dc91
-size 106
+coverage
+flask
+flask-login=0.5.0
+flask-security
+flask-blogging
+bootstrap-flask
+requests
+waitress
+markdown

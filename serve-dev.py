@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:012ce3655fed35c28caa9b6394b43194fbf9091c85ab1bd0b801e921d43929d1
-size 230
+import werkzeug.serving
+from routes.main import app
+
+def run_server():
+    app.debug = True
+    werkzeug.run_simple(application=app, hostname='127.0.0.1', port=1989, use_reloader=True)
+
+if __name__ == '__main__':
+    run_server()
