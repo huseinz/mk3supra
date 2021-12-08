@@ -1,3 +1,63 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:993fc819a20054c0c3ad87b8530dd7a3b94f62097db11b7afd169bcf33c0ee20
-size 2777
+{% extends "public/html/base_index.html" %}
+{% block styles %}
+{{super()}}
+{% endblock %}
+{% block title %}🏎️  MK3 Supra 🏎️{% endblock %}
+
+{% block content %}
+<div class='terminal-card'>
+	<header>DISCLAIMER</header>
+	<header>☠️ USE THE FOLLOWING FILES AT YOUR OWN RISK! ☠️</header>
+	<p>
+		USE THE FOLLOWING FILES AT YOUR OWN RISK. THEY ARE PROVIDED 'AS-IS' AND ANY IMPLIED WARRANTIES OR GUARANTEES, INCLUDING, BUT NOT LIMITED TO,
+		THE IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, ARE DISCLAIMED. IN NO EVENT SHALL THE CREATOR OR COPYRIGHT OWNER BE LIABLE FOR ANY
+		DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO: DEATH, INJURY, BODILY HARM,
+		LOSS AND DAMAGES TO PROPERTY, LEGAL OR CRIMINAL INFRACTIONS) IN ANY WAY RESULTING FROM THE USE OF THESE FILES/SOFTWARE.
+	</p>
+	<p>
+	        ALL PERFORMANCE MODIFICATIONS ARE AT THE USER'S OWN RISK. THE AUTHORS HOLD NO RESPONSIBILITY, IMPLIED OR OTHERWISE, FOR MECHANICAL, ELECTRICAL,
+		LEGAL, OR CRIMINAL ISSUES WHEN USING ANY OF THE INFORMATION PROVIDED HERE. AFTERMARKET ENGINE COMPUTERS/CONTROLLERS SOLD FOR OFF-ROAD USE ARE 
+		UNLAWFUL FOR USE ON PUBLIC ROADWAYS IN MANY U.S. STATES. THE END USER TAKES FULL RESPONSIBILITY FOR ANY USE OR MISUSE.
+	</p>
+	<p>
+		In other words, these maps are intended as a REFERENCE only and WILL NOT WORK AS-IS. You must treat them like a basemap and configure them
+	     	for your individual setup before use.	
+	</p>
+</div>
+<h1>EMU Black</h1>
+<section>
+	<h2>Docs</h2>
+	<ul>
+		<li><a href='https://drive.google.com/file/d/1EdAFo1TTJCEsH4Wx4Oo1ipDlBnCn-KV1/view?usp=sharing'>EMU Black Manual</a></li>
+		<li>Firmmware version I am using: <a href=https://www.ecumaster.com/files/EMU_BLACK/EMUBlackSetup_2_136.exe>2.136 (test version)</a></li>
+	</ul>
+</section>
+
+<h1>Specs</h1>
+<section>
+	TBD, this section will document my setup as it relates to tuning.
+</section>
+
+<h1>Maps</h1>
+<section>
+<p>I'll be posting my maps here, retaining old versions</p>
+<p>7M-GTE, non-PnP adapter:</p>
+	<ul>
+		<li><a href='https://drive.google.com/file/d/1Jg0qWt9cPTDQysyiv99-_n9O7aE1JAOh/view?usp=sharing'>Current Map, Nov 29 2021</a></li>
+		<li><a href='https://drive.google.com/file/d/1FK16yyCmr4FRjlpco8270ERvDUU3UBYU/view?usp=sharing'>My map using the CPS right before I converted to Hall cam/crank sensors, May 9 2021</a></li>
+	</ul>
+</section>
+
+<section class='terminal-card'>
+	<header>Changelog</header>
+	<ul>
+		<li>Created this page on Dec 7, 2021. I still need a good dyno tune, so my Current Map is not optimized. I've mainly done fuel and idle tuning so it runs pretty smoothly but still needs a lot of work in the boost regions.</li>
+	</ul>
+</section>
+
+{% endblock %}
+
+
+{% block scripts %}
+{{ super() }}
+{% endblock %}

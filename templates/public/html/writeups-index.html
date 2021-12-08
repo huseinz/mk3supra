@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2de1c03b494ab59d72b94efd1c791956c378be97d04d8999e4229abf9847c242
-size 642
+{% extends "public/html/base_index.html" %}
+{% block styles %}
+{{super()}}
+{% endblock %}
+{% block title %}🏎️  MK3 Supra 🏎️{% endblock %}
+
+{% block content %}
+<div class='terminal-timeline'>
+	<div class='terminal-card'>
+		<header><a class='terminal-prompt' href='/writeups/ac-restoration'>AC Restoration</a></header>
+		<div>
+			I perform an R12 to R134 conversion and replace all O-rings, receiver/dryer, compressor, expansion valve, evaporator, blower motor and resistor, and seal foam. This job is much easier with the front bumper bar off.
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{% endblock %}

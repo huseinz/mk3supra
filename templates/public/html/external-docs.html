@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a7f63ae911c7a64764512826bd8516e3b5ee13c9de34d7d028935197ec94faf8
-size 1286
+{% extends "public/html/base_index.html" %}
+{% block styles %}
+{{super()}}
+{% endblock %}
+{% block title %}🏎️  MK3 Supra 🏎️{% endblock %}
+
+{% block content %}
+<div class='terminal-timeline'>
+	<div class='terminal-card'>
+		<header><a class='terminal-prompt' href='http://www.cygnusx1.net/Supra/techtips.aspx'>Cygnus X1 Technical Library</a></header>
+		<div>
+			The OG reference to find the <em>Toyota Service Repair Manual (TSRM)</em>, <em>Toyota Electrical Wiring Diagram (TEWD)</em> and 
+			the <em>Electronic Parts Catalog (EPC)</em> for both the MK2 and MK3 Supra for over 15 years.
+			<br><br>
+			A nice old school website with useful articles and links for repair guides, part numbers, and other resources.  
+		</div>
+	</div>
+	<div class='terminal-card'>
+		<header><a class='terminal-prompt' href='http://www.turboninjas.com/mk3supra/'>turboninjas</a><br>
+		        <a class='terminal-prompt' href='/turboninjas'>turboninjas (mirror)</a></header>
+		<div>
+			An old fansite from 2004 with links to full TSRM PDFs from CygnusX1 and other useful documents. I also host a mirror of the site
+			in the event it goes offline. It's amazing it has existed just like this for over 15 years.
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{% endblock %}

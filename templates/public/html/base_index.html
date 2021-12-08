@@ -1,3 +1,65 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1ac3535727978771de591078e99ad1636956afe6edcb1c4806e0f3cd98133a8c
-size 2013
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+
+        {% block styles %}
+	<link rel="stylesheet" href="{{url_for('static', filename='css/dark-terminal.css')}}">
+	<link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}">
+        {% endblock %}
+	<title>
+	{% block title %}
+        {% endblock %}
+	</title>
+    </head>
+    <body>
+	<div class="page-container">
+	    <div class="sidebar">
+		<img src='{{url_for('static', filename='svg/supra_white.svg')}}' alt='supra logo' class='img-responsive'>
+		<ul id="menu">
+		    <li>
+			<a href="/" class="">Home</a>
+		    </li>
+		    <li>
+			<a href="/brochure-art">Brochure Art</a>
+		    </li>
+		    <li>
+			<a href="/writeups">Writeups</a>
+		    </li>
+		    <li>
+			<a href="/tuning">ECU Maps and Tuning</a>
+		    </li>
+		    <li> External Links
+		    <ul id='links-external'>
+			    <li>
+				<a href="/external-docs">Reference</a>
+			    </li>
+			    <li>
+				<a href="/external-parts">Parts</a>
+			    </li>
+			    <li>
+				<a href="/external-writeups">Writeups</a>
+			    </li>
+		    </ul>
+		    </li>
+		</ul>
+	    </div>
+	    <div class="content">
+		{% block content %}
+		{% endblock %}
+	    </div>
+            <div class='footer'>
+			<a href='https://github.com/huseinz/mk3supra'>GitHub Source</a> 
+			This page first went live on 15 Oct 2021. Stylesheets provided by <a href='https://terminalcss.xyz/'>terminal.css</a>
+			<!-- hitwebcounter Code START -->
+			<a href="https://www.hitwebcounter.com" target="_blank">
+			<img style='width: auto' src="https://hitwebcounter.com/counter/counter.php?page=7883189&style=0038&nbdigits=6&type=page&initCount=0" title="Free Counter" Alt="web counter"   border="0" /></a>                                    
+			                                    
+            </div>
+	</div>
+        {% block scripts %}
+        {% endblock %}
+    </body>
+</html>
