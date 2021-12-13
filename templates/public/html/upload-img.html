@@ -9,13 +9,18 @@
   <fieldset>
   <legend>Upload</legend>
      <div class='form-group'>
+	  <label id='filename_label' for="filename_input">
+	  Save file as:
+	  <input  style='' type="text" name="filename" id="filename"><br>
+	  </label>
 	  <label id='file1_label' class='btn btn-default btn-ghost' for="file1">
 	  No file selected
-	  <input  style='display: none;' type="file" name="file1" id="file1" onchange="uploadFile()"><br>
+	  <input  style='display: none;' type="file" name="file1" id="file1" onchange="loadFile()"><br>
 	  </label>
 	  <div class='progress-bar'>
 		<div id="progressBar" class="progress-bar-filled"></div>
 	  </div>
+	  <div id="preview"></div>
           <p id="loaded_n_total"></p>
      </div>
   </fieldset>
@@ -29,12 +34,18 @@ function _(el) {
   return document.getElementById(el);
 }
 
-function uploadFile() {
+function loadFile() {
   var file = _("file1").files[0];
+  var filename = _("filename").value;
   // alert(file.name+" | "+file.size+" | "+file.type);
   var formdata = new FormData();
   formdata.append("file1", file);
+  formdata.append("filename", filename);
   _("file1_label").innerHTML = file.name;
+        const image = document.createElement('img');
+	        image.src = URL.createObjectURL(file);
+
+		        _("preview").appendChild(image);
   var ajax = new XMLHttpRequest();
   ajax.upload.addEventListener("progress", progressHandler, false);
   ajax.addEventListener("load", completeHandler, false);
@@ -44,6 +55,24 @@ function uploadFile() {
   //use file_upload_parser.php from above url
   ajax.send(formdata);
 }
+
+function uploadFile() {
+  var file = _("file1").files[0];
+  var filename = _("filename").value;
+  // alert(file.name+" | "+file.size+" | "+file.type);
+  var formdata = new FormData();
+  formdata.append("file1", file);
+  formdata.append("filename", filename);
+  var ajax = new XMLHttpRequest();
+  ajax.upload.addEventListener("progress", progressHandler, false);
+  ajax.addEventListener("load", completeHandler, false);
+  ajax.addEventListener("error", errorHandler, false);
+  ajax.addEventListener("abort", abortHandler, false);
+  ajax.open("POST", "{{ request.uri }}"); // http://www.developphp.com/video/JavaScript/File-Upload-Progress-Bar-Meter-Tutorial-Ajax-PHP
+  //use file_upload_parser.php from above url
+  ajax.send(formdata);
+}
+
 
 function progressHandler(event) {
   var percent = (event.loaded / event.total) * 100;

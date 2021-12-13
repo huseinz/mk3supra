@@ -13,6 +13,7 @@ from flask import (
 import markdown
 import flask_login
 from logging.config import dictConfig
+from werkzeug.utils import secure_filename
 from .user import User
 
 users = {'zubir@zubir.dev': {'password': 'secret'}}
@@ -33,6 +34,10 @@ dictConfig({
 })
 
 app = Flask('mk3supra', static_url_path='', static_folder='static', template_folder='templates')
+app.config['MAX_CONTENT_LENGTH'] = 1024 * 1024 * 1024
+app.config['UPLOAD_EXTENSIONS'] = ['.jpg', '.png', '.gif', '.jpeg', '.md', '.pdf']
+app.config['UPLOAD_PATH'] = app.static_folder + '/uploads'
+
 with open('routes/auth_key.secret', 'r') as fh:
     key = fh.read()
     app.secret_key = key
@@ -110,9 +115,14 @@ def img_upload():
     app.logger.info("File upload request...")
     if request.method == "POST":
         user_file = request.files["file1"]
+        #filename = secure_filename(user_file.filename)
+        filename = secure_filename(request.form['filename'])
         app.logger.info("File uploaded")
-        app.logger.info(user_file)
-        res = make_response(jsonify({"message": user_file.filename}), 200)
+        file_ext = os.path.splitext(filename)[1]
+        if file_ext.lower() not in app.config['UPLOAD_EXTENSIONS']:
+            abort(400)
+        user_file.save(os.path.join(app.config['UPLOAD_PATH'], filename))
+        res = make_response(jsonify({"message": filename}), 200)
         return res
 
     return render_template("public/html/upload-img.html")
