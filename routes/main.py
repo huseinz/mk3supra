@@ -1,15 +1,15 @@
 import os
 import random
 from flask import (
-        Flask, 
-	jsonify,
-        url_for,
-	request,
-	make_response,
-        render_template,
-        send_from_directory,
-        redirect,
-        )
+    Flask, 
+    jsonify,
+    url_for,
+    request,
+    make_response,
+    render_template,
+    send_from_directory,
+    redirect,
+)
 import markdown
 import flask_login
 from logging.config import dictConfig
@@ -99,7 +99,13 @@ def writeups_index():
 
 @app.route("/tuning")
 def tuning():
-        return render_template('public/html/tuning.html')
+    markdown_file = 'tuning.md'
+    path = os.path.join('templates/public/markdown', markdown_file)
+    if os.path.exists(path):
+        md = render_template('public/markdown/' + markdown_file)
+        html = markdown.markdown(md)
+        return render_template("public/html/tuning.html", markdown=html)
+    return render_template('public/html/404.html'), 404
 
 @app.route("/writeups/<path:subpath>")
 def writeups_page(subpath):

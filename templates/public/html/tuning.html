@@ -4,6 +4,8 @@
 {% endblock %}
 {% block title %}🏎️  MK3 Supra 🏎️{% endblock %}
 
+
+
 {% block content %}
 <div class='terminal-card'>
 	<header class='terminal-prompt'>DISCLAIMER</header>
@@ -24,21 +26,8 @@
 	     	for your individual setup before use.	
 	</p>
 </div>
-The following is for my 7M-GTE running the ECUMasters EMU Black ECU.
-<section>
-<h2>Docs</h2>
-	<ul>
-		<li><a href='https://drive.google.com/file/d/1EdAFo1TTJCEsH4Wx4Oo1ipDlBnCn-KV1/view?usp=sharing'>EMU Black Manual</a></li>
-		<li>Firmmware version I am using: <a href=https://www.ecumaster.com/files/EMU_BLACK/EMUBlackSetup_2_136.exe>2.136 (test version)</a></li>
-	</ul>
-</section>
-<hr />
 
-<section>
-<h2>Specs</h2>
-	TBD, this section will document my setup as it relates to tuning.
-</section>
-<hr />
+{{ markdown | safe }}
 
 <section>
 <h2>Maps</h2>
@@ -53,7 +42,8 @@ The following is for my 7M-GTE running the ECUMasters EMU Black ECU.
 <section class='terminal-card'>
 	<header class='terminal-prompt'>Changelog</header>
 	<ul>
-		<li>Created this page on Dec 7, 2021. I still need a good dyno tune, so my Current Map is not optimized. I've mainly done fuel and idle tuning so it runs pretty smoothly but still needs a lot of work in the boost regions.</li>
+		<li>20 Dec 2021: Started adding my build specs </li>
+		<li>7 Dec 2021: Created this page. I still need a good dyno tune, so my Current Map is not optimized. I've mainly done fuel and idle tuning so it runs pretty smoothly but still needs a lot of work in the boost regions.</li>
 	</ul>
 </section>
 <hr />
