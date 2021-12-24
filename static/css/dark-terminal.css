@@ -513,12 +513,12 @@ table caption {
   font-size: 1em;
   margin: 0 0 1em 0;
 }
-
+/*
 table tbody td:first-child {
   font-weight: 700;
   color: var(--secondary-color);
 }
-
+*/
 .form {
   width: 100%;
 }

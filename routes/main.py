@@ -11,6 +11,7 @@ from flask import (
     redirect,
 )
 import markdown
+from markdown.extensions import tables
 import flask_login
 from logging.config import dictConfig
 from werkzeug.utils import secure_filename
@@ -103,7 +104,7 @@ def tuning():
     path = os.path.join('templates/public/markdown', markdown_file)
     if os.path.exists(path):
         md = render_template('public/markdown/' + markdown_file)
-        html = markdown.markdown(md)
+        html = markdown.markdown(md, extensions=['tables'])
         return render_template("public/html/tuning.html", markdown=html)
     return render_template('public/html/404.html'), 404
 
