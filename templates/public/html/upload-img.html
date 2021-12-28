@@ -15,12 +15,12 @@
 	  </label>
 	  <label id='file1_label' class='btn btn-default btn-ghost' for="file1">
 	  No file selected
-	  <input  style='display: none;' type="file" name="file1" id="file1" onchange="loadFile()"><br>
+	  <input  style='display: none;' type="file" name="file1" id="file1" onchange="img_preview()"><br>
 	  </label>
 	  <div class='progress-bar'>
 		<div id="progressBar" class="progress-bar-filled"></div>
 	  </div>
-	  <div id="preview"></div>
+	  <img id="preview">
           <p id="loaded_n_total"></p>
      </div>
   </fieldset>
@@ -32,6 +32,12 @@
 <script>
 function _(el) {
   return document.getElementById(el);
+}
+
+function img_preview(){
+    var file = _("file1").files[0];
+    _("file1_label").innerHTML = file.name;
+    _("preview").src = URL.createObjectURL(file);
 }
 
 function loadFile() {

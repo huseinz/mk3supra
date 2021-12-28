@@ -45,6 +45,13 @@
 		    </ul>
 		    </li>
 		</ul>
+		<div class="terminal-alert">
+		<i>
+		{% block fortune %}
+		{{ fortune }}
+		{% endblock %}
+		</i>
+		</div>
 	    </div>
 	    <div class="content">
 		{% block content %}

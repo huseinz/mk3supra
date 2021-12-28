@@ -11,7 +11,7 @@
         --background-color: #222225;
         --page-width: 60em;
         --font-color: #e8e9ed;
-        --invert-font-color: #00e6ff;
+        --invert-font-color: #FFFFFF;
         --secondary-color: #3d4658;
         --tertiary-color: #a3abba;
         /*--primary-color: #62c4ff;*/
@@ -36,7 +36,10 @@
 
 *::selection {
   background: var(--primary-color);
+  /*
   color: var(--invert-font-color);
+  */
+  color: #FFFFFF;
 }
 
 body {
@@ -67,7 +70,8 @@ a {
 
 a:hover {
   background-color: var(--primary-color);
-  color: var(--invert-font-color);
+  /*color: var(--invert-font-color);*/
+  color: #000000;
 }
 
 em {
@@ -761,7 +765,7 @@ select:-webkit-autofill:focus {
 }
 
 .terminal-card > header {
-  color: var(--invert-font-color);
+  color: var(--primary-color);
   text-align: center;
   background-color: var(--secondary-color);
   padding: 0.5em 0;

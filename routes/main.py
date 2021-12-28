@@ -1,5 +1,7 @@
 import os
 import random
+import markdown
+import subprocess
 from flask import (
     Flask, 
     jsonify,
@@ -10,7 +12,6 @@ from flask import (
     send_from_directory,
     redirect,
 )
-import markdown
 from markdown.extensions import tables
 import flask_login
 from logging.config import dictConfig
@@ -46,6 +47,9 @@ with open('routes/auth_key.secret', 'r') as fh:
 login_manager = flask_login.LoginManager()
 login_manager.init_app(app)
 
+def fortune():
+    return subprocess.run(['/usr/games/fortune'], stdout=subprocess.PIPE).stdout.decode('utf-8')
+
 @login_manager.user_loader
 def user_loader(email):
     if email not in users:
@@ -68,15 +72,15 @@ def request_loader(request):
 
 @app.route("/")
 def hello_world():
-        return render_template('public/html/index.html')
+        return render_template('public/html/index.html', fortune=fortune())
 
 @app.route("/external-docs")
 def external_docs():
-        return render_template('public/html/external-docs.html')
+        return render_template('public/html/external-docs.html', fortune=fortune())
 
 @app.route("/external-parts")
 def external_parts():
-        return render_template('public/html/external-parts.html')
+        return render_template('public/html/external-parts.html', fortune=fortune())
 
 @app.route("/brochure-art")
 def art_ep():
@@ -84,7 +88,7 @@ def art_ep():
         filenames = os.listdir(os.path.join(app.static_folder, art_folder))
         paths = [url_for('static', filename=os.path.join(art_folder, f)) for f in filenames]
         random.shuffle(paths)
-        return render_template('public/html/brochure-art.html', art=paths)
+        return render_template('public/html/brochure-art.html', art=paths, fortune=fortune())
 
 @app.route("/turboninjas")
 def turboninjas():
@@ -96,7 +100,7 @@ def serve_turboninjas_files(subpath):
 
 @app.route("/writeups")
 def writeups_index():
-        return render_template('public/html/writeups-index.html')
+        return render_template('public/html/writeups-index.html', fortune=fortune())
 
 @app.route("/tuning")
 def tuning():
@@ -105,8 +109,8 @@ def tuning():
     if os.path.exists(path):
         md = render_template('public/markdown/' + markdown_file)
         html = markdown.markdown(md, extensions=['tables'])
-        return render_template("public/html/tuning.html", markdown=html)
-    return render_template('public/html/404.html'), 404
+        return render_template("public/html/tuning.html", markdown=html, fortune=fortune())
+    return render_template('public/html/404.html', fortune=fortune()), 404
 
 @app.route("/writeups/<path:subpath>")
 def writeups_page(subpath):
@@ -114,8 +118,8 @@ def writeups_page(subpath):
     if os.path.exists(path):
         md = render_template('public/markdown/' + subpath + '.md')
         html = markdown.markdown(md)
-        return render_template("public/html/writeup-template.html", title=subpath, content=html)
-    return render_template('public/html/404.html'), 404
+        return render_template("public/html/writeup-template.html", title=subpath, content=html, fortune=fortune())
+    return render_template('public/html/404.html', fortune=fortune()), 404
 
 @app.route("/upload-img", methods=["GET", "POST"])
 def img_upload():
@@ -132,11 +136,11 @@ def img_upload():
         res = make_response(jsonify({"message": filename}), 200)
         return res
 
-    return render_template("public/html/upload-img.html")
+    return render_template("public/html/upload-img.html", fortune=fortune())
 
 @app.errorhandler(404)
 def page_not_found(error):
-    return render_template('public/html/404.html'), 404
+    return render_template('public/html/404.html', fortune=fortune()), 404
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
