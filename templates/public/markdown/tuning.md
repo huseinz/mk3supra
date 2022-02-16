@@ -3,7 +3,7 @@ The following is for my 7M-GTE running the ECUMasters EMU Black ECU.
 ## Docs
 - [EMU Black Training Manual](https://drive.google.com/file/d/1-_NAlyTh8-dYGTJImPhoPie9wzJ2CXCW/view)
 - [EMU Black Reference Manual](https://drive.google.com/file/d/1EdAFo1TTJCEsH4Wx4Oo1ipDlBnCn-KV1/view?usp=sharing)
-- Firmware version I am using: [2.126 (test version)](https://www.ecumaster.com/files/EMU_BLACK/EMUBlackSetup_2_136.exe)
+- Firmware version I am using: [2.143 (test version)](https://www.ecumaster.com/files/EMU_BLACK/EMUBlackSetup_2_143.exe)
 
 ## Pinout
 
@@ -115,6 +115,6 @@ The following is for my 7M-GTE running the ECUMasters EMU Black ECU.
 ## Maps
 I'll be posting my maps here, retaining old versions:
 
-- [Current Map]()
+- [Current Map (EBC disabled, wastegate only)](https://drive.google.com/file/d/1t1qtVtnJLF75ffeZ08zJ6GnNKFXYXd9i/view?usp=sharing)
 - [Map that uses the CPS, right before I converted to crank sensor](https://drive.google.com/file/d/1FK16yyCmr4FRjlpco8270ERvDUU3UBYU/view?usp=sharing) 
 
