@@ -52,7 +52,7 @@ The following is for my 7M-GTE running the ECUMasters EMU Black ECU.
 		- Bosch LSU 4.9 for ECU input
 	- ***Pressure***
 		- **B31** Fuel: LDM 0-100psi, mounted in AFPR gauge port
-		- **B35**: Oil: LDM 0-100psi, mounted at the '7M' inscription port
+		- **B35**  Oil: LDM 0-100psi, mounted at the '7M' inscription port
 		- Factory sender and factory gauge
 	- ***Temperature***
 		- **B5** CLT: 89+ Toyota sensor, stock sensor port
@@ -61,7 +61,7 @@ The following is for my 7M-GTE running the ECUMasters EMU Black ECU.
 - ***Ignition***
 	- **Coils**: IS300 2JZ-GE waste-spark coils using EMU Black internal igniter. ~3ms dwell
 - ***Fuel***
-	- **G21**, **Pump**: Walbro 255, 12V relay mod, -6AN feed and return
+	- **G21**, **Pump**: DeatschWerks DW300, 12V relay mod, -6AN feed and return
 	- **AFPR**: DeatschWerks DWR1000i 50psi @ atmospheric
 	- **Injectors**: Bosch 550cc low-Z injectors from Driftmotion. 91-95 Acura Legend 6-channel fuel injector resistor to support sequential injection with low-Z injectors
 - ***Boost Control***
